@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
  
 interface UserProps {
     id:string;
@@ -16,7 +18,7 @@ function Movie({id, coverImg, title, year, summary, genres }:UserProps) {
         <img src={coverImg} alt={title}   />
         <div>
           <h2  >
-             {title} 
+             <Link to={`/movie/${id}`}>{title} </Link>
           </h2>
           <h3  >{year}</h3>
           <p>{summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p>
